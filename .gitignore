@@ -1,0 +1,9 @@
+.directory
+.idea
+var/cache
+var/session
+error.log
+app/etc/local.xml
+draft
+.git
+
