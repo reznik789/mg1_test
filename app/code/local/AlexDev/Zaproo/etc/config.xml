@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<config>
+    <global>
+        <models>
+            <zaproo>
+                <class>AlexDev_Zaproo_Model</class>
+            </zaproo>
+        </models>
+        <blocks>
+            <zaproo>
+                <class>AlexDev_Zaproo_Block</class>
+            </zaproo>
+        </blocks>
+        <helpers>
+            <zaproo>
+                <class>AlexDev_Zaproo_Helper</class>
+            </zaproo>
+        </helpers>
+        <events>
+            <customer_login>
+                <observers>
+                    <zaproo>
+                        <type>model</type>
+                        <class>zaproo/observer</class>
+                        <method>logCustomer</method>
+                    </zaproo>
+                </observers>
+            </customer_login>
+        </events>
+    </global>
+</config>
