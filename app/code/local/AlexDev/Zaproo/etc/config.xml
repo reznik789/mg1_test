@@ -28,4 +28,16 @@
             </customer_login>
         </events>
     </global>
+
+    <frontend>
+        <routers>
+            <alexdev_zaproo>
+                <use>standard</use>
+                <args>
+                    <module>AlexDev_Zaproo</module>
+                    <frontName>zaproo</frontName>
+                </args>
+            </alexdev_zaproo>
+        </routers>
+    </frontend>
 </config>

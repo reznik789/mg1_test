@@ -10,5 +10,9 @@ require_once ('app/Mage.php');
 
 Mage::app();
 
-$test = Mage::getModel('zaproo/index');
-$test->sayHello();
+//$test = Mage::getModel('zaproo/index');
+//$test->sayHello();
+$product = Mage::getModel('catalog/product')->load(46);
+var_dump($product);
+$pages = Mage::getModel('cms/page')->getCollection();
+var_dump($pages);
