@@ -6,4 +6,5 @@ error.log
 app/etc/local.xml
 draft
 .git
+media/catalog/product/cache/*
 

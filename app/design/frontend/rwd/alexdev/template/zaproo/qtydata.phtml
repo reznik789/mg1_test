@@ -1,0 +1,39 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: dev30
+ * Date: 11/29/16
+ * Time: 1:53 PM
+ *
+ * Template for AlexDev_Zaproo_Block_QtyData
+ *
+ * @var $this AlexDev_Zaproo_Block_QtyData
+ */
+
+$products = $this->getProductsQtyData();
+$is_empty_store = !($products->count() > 0);
+?>
+
+<?php if($is_empty_store) : ?>
+    <p>Store is empty</p>
+<?php else: ?>
+    <table>
+        <thead>
+            <tr>
+                <th>Product name</th>
+                <th>SKU</th>
+                <th>QTY</th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php foreach($products as $product) : ?>
+            <tr>
+                <td><a href="<?=$product->getProductUrl() ?>"><?= $product->getName() ?></a></td>
+                <td><?= $product->getSku() ?></td>
+                <td><?= round($product->getQty(), 0)?></td>
+            </tr>
+        <?php endforeach;?>
+        </tbody>
+    </table>
+
+<?php endif; ?>
