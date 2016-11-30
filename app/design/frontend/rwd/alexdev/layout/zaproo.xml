@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <layout>
-    <alexdev_zaproo_qty_index>
+    <alexdev_zaproo_index_qty>
         <reference name = 'content'>
-            <block type = "zaproo/qtyData" name = 'zaproo' template = 'zaproo/qtydata.phtml' />
+            <block type = "zaproo/qtyData"  name = 'zaproo.qtynum' as = 'qtynum' template = 'zaproo/qtydata.phtml' />
         </reference>
-    </alexdev_zaproo_qty_index>
+    </alexdev_zaproo_index_qty>
 </layout>

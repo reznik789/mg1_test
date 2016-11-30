@@ -19,7 +19,7 @@ class AlexDev_Zaproo_Block_QtyData extends Mage_Core_Block_Template
                 'product_id=entity_id',
                 '{{table}}.stock_id=1',
                 'left'
-            )->addAttributeToSort('name', 'ASC');;
+            )->addAttributeToSort('name', 'ASC');
 
        return $product_collection;
     }
