@@ -34,8 +34,11 @@ $is_empty_store = !($products->count() > 0);
                     <td><?= round($product->getQty(), 0)?></td>
                 <?php elseif ($display_type == AlexDev_Zaproo_IndexController::STR_LIST) : ?>
                     <td><?= $product->getQty() > 0 ? 'In stock' : 'Out of stock'?></td>
+                    <!--Or using isInStock()-->
+                    <!--<td><?php//echo $product->isInStock() ? 'In stock' : 'Out of stock';?></td>-->
                 <?php else : ?>
                     <td><?= round($product->getQty(), 0) . '&emsp;|&emsp;' . ($product->getQty() > 0 ? 'In stock' : 'Out of stock')?></td>
+                    <!--<td><?php//echo round($product->getQty(), 0) . '&emsp;|&emsp;' . ($product->isInStock() ? 'In stock' : 'Out of stock')?></td>-->
                 <?php endif;?>
             </tr>
         <?php endforeach;?>
