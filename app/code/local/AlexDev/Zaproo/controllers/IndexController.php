@@ -24,7 +24,9 @@ class AlexDev_Zaproo_IndexController extends Mage_Core_Controller_Front_Action
     public function qtyAction(){
         $type = $this->getRequest()->getParam('type');
         if (!$this->isCorrectListType($type)) {
-            die(); // TODO realize redirect to home page
+            Mage::getSingleton('core/session')->addError('Incorrect display type');
+            session_write_close();
+            $this->_redirect("/");
         }
         $this->loadLayout();
         $this->getLayout()->getBlock('zaproo.qtydata')->setData('type', $type);
