@@ -27,7 +27,7 @@ class AlexDev_Zaproo_IndexController extends Mage_Core_Controller_Front_Action
             die(); // TODO realize redirect to home page
         }
         $this->loadLayout();
-        $this->getLayout()->getBlock('zaproo.qtynum')->setData('type', $type);
+        $this->getLayout()->getBlock('zaproo.qtydata')->setData('type', $type);
         $this->renderLayout();
     }
 

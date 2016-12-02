@@ -21,6 +21,6 @@ class AlexDev_Zaproo_Block_QtyData extends Mage_Core_Block_Template
                 'left'
             )->addAttributeToSort('name', 'ASC');
 
-       return $product_collection;
+        return $product_collection;
     }
 }
