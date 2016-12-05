@@ -6,7 +6,8 @@
  * Date: 11/28/16
  * Time: 5:05 PM
  */
-class AlexDev_Zaproo_IndexController extends Mage_Core_Controller_Front_Action
+class AlexDev_Zaproo_IndexController
+    extends Mage_Core_Controller_Front_Action
 {
     const NUM_LIST = 'num';
     const STR_LIST = 'str';
@@ -14,11 +15,8 @@ class AlexDev_Zaproo_IndexController extends Mage_Core_Controller_Front_Action
 
     public function indexAction() {
         $this->loadLayout();
+        $zaproo_test = Mage::getResourceModel('zaproo/test_collection');
         $this->renderLayout();
-    }
-
-    public function sayHelloAction() {
-        echo "Hello from syHelloAction";
     }
 
     public function qtyAction(){
@@ -41,6 +39,5 @@ class AlexDev_Zaproo_IndexController extends Mage_Core_Controller_Front_Action
         ];
         return in_array($type, $correct_types);
     }
-
 
 }

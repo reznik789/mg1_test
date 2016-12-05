@@ -1,10 +1,22 @@
 <?xml version="1.0"?>
 <config>
+    <modules>
+        <AlexDev_Zaproo>
+            <version>0.1.1</version>
+        </AlexDev_Zaproo>
+    </modules>
     <global>
         <models>
             <zaproo>
                 <class>AlexDev_Zaproo_Model</class>
+                <resourceModel>alexdev_zaproo_resource</resourceModel>
             </zaproo>
+            <alexdev_zaproo_resource>
+                <class>AlexDev_Zaproo_Model_Resource</class>
+                <entities>
+                    <test><table>alexdev_zaproo_test</table></test>
+                </entities>
+            </alexdev_zaproo_resource>
         </models>
         <blocks>
             <zaproo>
@@ -27,6 +39,14 @@
                 </observers>
             </customer_login>
         </events>
+        <resources>
+            <zaproo_setup>
+                <setup>
+                    <module>AlexDev_Zaproo</module>
+                    <class>Mage_Core_Model_Resource_Setup</class>
+                </setup>
+            </zaproo_setup>
+        </resources>
     </global>
 
     <frontend>
