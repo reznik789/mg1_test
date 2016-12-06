@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout>
+    <adminhtml_zaproo_index>
+        <reference name = 'content'>
+            <block type="zaproo/adminhtml_alexAdmin" name="zaproo.alexadmin" template="zaproo/alexadmin.phtml" />
+        </reference>
+    </adminhtml_zaproo_index>
+</layout>

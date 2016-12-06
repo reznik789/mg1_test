@@ -67,4 +67,35 @@
             </updates>
         </layout>
     </frontend>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <zaproo after="Mage_Adminhtml">AlexDev_Zaproo_Adminhtml</zaproo>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <zaproo>
+                    <file>zaproo.xml</file>
+                </zaproo>
+            </updates>
+        </layout>
+        <events>
+            <controller_action_predispatch>
+                <observers>
+                    <zaproo>
+                        <type>model</type>
+                        <class>zaproo/observer</class>
+                        <method>controllerActionPredispatch</method>
+                    </zaproo>
+                </observers>
+            </controller_action_predispatch>
+        </events>
+    </adminhtml>
 </config>
