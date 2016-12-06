@@ -2,7 +2,7 @@
 <config>
     <modules>
         <AlexDev_Zaproo>
-            <version>0.1.1</version>
+            <version>0.1.5</version>
         </AlexDev_Zaproo>
     </modules>
     <global>

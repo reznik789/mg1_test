@@ -15,7 +15,6 @@ class AlexDev_Zaproo_IndexController
 
     public function indexAction() {
         $this->loadLayout();
-        $zaproo_test = Mage::getResourceModel('zaproo/test_collection');
         $this->renderLayout();
     }
 
