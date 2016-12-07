@@ -15,6 +15,10 @@ class AlexDev_Zaproo_IndexController
 
     public function indexAction() {
         $this->loadLayout();
+        $configValue = Mage::getStoreConfig(
+            'zaproo/general/recommendation',
+            Mage::app()->getStore()
+        );
         $this->renderLayout();
     }
 

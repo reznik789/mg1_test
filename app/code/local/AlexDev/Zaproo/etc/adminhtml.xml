@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <catalog>
+            <children>
+                <zaproo translate='title'>
+                    <title>Manage Zaproo</title>
+                    <sort_order>40</sort_order>
+                    <children>
+                        <stalls translate='title'>
+                            <title><![CDATA[Zaproo Managment]]></title>
+                            <sort_order>2</sort_order>
+                            <action>adminhtml/zaproo/index</action>
+                        </stalls>
+                    </children>
+                </zaproo>
+            </children>
+        </catalog>
+    </menu>
+
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <catalog>
+                        <children>
+                            <zaproo>
+                                <title>Zaproo Permissions</title>
+                                <sort_order>40</sort_order>
+                                <children>
+                                    <stalls translate='title'>
+                                        <title><![CDATA[Zaproo Managment]]></title>
+                                        <sort_order>2</sort_order>
+                                    </stalls>
+                                </children>
+                            </zaproo>
+                        </children>
+                    </catalog>
+                </children>
+            </admin>
+        </resources>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <zaproo>
+                                        <title>Store Zaproo Test Section</title>
+                                    </zaproo>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
