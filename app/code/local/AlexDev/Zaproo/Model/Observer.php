@@ -21,4 +21,8 @@ class AlexDev_Zaproo_Model_Observer
             Zend_Log::INFO, 'admin_log', true
         );
     }
+
+    public function initControllerRouters(Varien_Event_Observer $observer) {
+        
+    }
 }

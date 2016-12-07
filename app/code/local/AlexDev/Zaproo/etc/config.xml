@@ -14,7 +14,15 @@
             <alexdev_zaproo_resource>
                 <class>AlexDev_Zaproo_Model_Resource</class>
                 <entities>
-                    <test><table>alexdev_zaproo_test</table></test>
+                    <test>
+                        <table>alexdev_zaproo_test</table>
+                    </test>
+                    <article>
+                        <table>alexdev_zaproo_article</table>
+                    </article>
+                    <eav_attribute>
+                        <table>zaproo_articles_eav_attribute</table>
+                    </eav_attribute>
                 </entities>
             </alexdev_zaproo_resource>
         </models>
@@ -38,6 +46,15 @@
                     </zaproo>
                 </observers>
             </customer_login>
+            <controller_front_init_routers><!-- event for custom router - url rewrites -->
+                <observers>
+                    <zaproo>
+                        <type>model</type>
+                        <class>zaproo/observer</class>
+                        <method>initControllerRouters</method>
+                    </zaproo>
+                </observers>
+            </controller_front_init_routers>
         </events>
         <resources>
             <zaproo_setup>
