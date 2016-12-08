@@ -1,8 +1,74 @@
 <?xml version="1.0"?>
 <layout>
     <adminhtml_zaproo_index>
-        <reference name = 'content'>
-            <block type="zaproo/adminhtml_alexAdmin" name="zaproo.alexadmin" template="zaproo/alexadmin.phtml" />
+        <reference name='content'>
+            <block type="zaproo/adminhtml_alexAdmin" name="zaproo.alexadmin" template="zaproo/alexadmin.phtml"/>
         </reference>
     </adminhtml_zaproo_index>
+    <adminhtml_news_article_index>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>cms/zaproo/article</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="zaproo/adminhtml_article" name="article">
+                <block type="adminhtml/store_switcher" name="store_switcher" as="store_switcher">
+                    <action method="setUseConfirm">
+                        <params>0</params>
+                    </action>
+                </block>
+            </block>
+        </reference>
+    </adminhtml_news_article_index>
+    <adminhtml_news_article_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="zaproo/adminhtml_article_grid" name="article_grid"/>
+        </block>
+    </adminhtml_news_article_grid>
+    <!-- Article add/edit action -->
+    <adminhtml_news_article_edit>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>cms/zaproo/article</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="zaproo/adminhtml_article_edit" name="article_edit"/>
+        </reference>
+        <reference name="left">
+            <block type="adminhtml/store_switcher" name="store_switcher" before="-"/>
+            <block type="zaproo/adminhtml_article_edit_tabs" name="article_tabs"/>
+        </reference>
+        <reference name="head">
+            <action method="setCanLoadTinyMce">
+                <load>1</load>
+            </action>
+        </reference>
+        <reference name="js">
+            <block type="core/template" name="catalog.wysiwyg.js" template="catalog/wysiwyg/js.phtml"/>
+        </reference>
+    </adminhtml_news_article_edit>
+
+    <adminhtml_news_article_attribute_index>
+        <reference name="content">
+            <block type="zaproo/adminhtml_article_attribute" name="attribute_grid"/>
+        </reference>
+    </adminhtml_news_article_attribute_index>
+    <adminhtml_news_article_attribute_edit>
+        <reference name="left">
+            <block type="zaproo/adminhtml_article_attribute_edit_tabs" name="attribute_edit_tabs"/>
+        </reference>
+        <reference name="content">
+            <block type="zaproo/adminhtml_article_attribute_edit" name="attribute_edit_content"/>
+        </reference>
+        <reference name="js">
+            <block type="adminhtml/template" name="attribute_edit_js" template="zaproo/attribute/js.phtml">
+                <action method="setMainEntityName">
+                    <name>article</name>
+                </action>
+            </block>
+        </reference>
+    </adminhtml_news_article_attribute_edit>
 </layout>

@@ -5,4 +5,32 @@
             <block type = "zaproo/qtyData"  name = 'zaproo.qtydata' as = 'qtydata' template = 'zaproo/qtydata.phtml' />
         </reference>
     </alexdev_zaproo_index_qty>
+    <alexdev_zaproo_article_index translate="label" module="zaproo">
+        <label>Articles list</label>
+        <update handle="page_two_columns_left" />
+        <reference name="content">
+            <block type="zaproo/article_list" name="article_list" template="zaproo/article/list.phtml" />
+        </reference>
+    </alexdev_zaproo_article_index>
+    <alexdev_zaproo_article_view translate="label" module="zaproo">
+        <label>Article view page</label>
+        <update handle="page_two_columns_left" />
+        <reference name="content">
+            <block type="zaproo/article_view" name="article_view" template="zaproo/article/view.phtml" />
+        </reference>
+    </alexdev_zaproo_article_view>
+    <alexdev_zaproo_article_rss translate="label" module="zaproo">
+        <label>Articles rss feed</label>
+        <block type="zaproo/article_rss" output="toHtml" name="zaproo.article.rss" />
+    </alexdev_zaproo_article_rss>
+    <rss_index_index>
+        <reference name="content">
+            <block type="zaproo/rss" name="news.rss" template="zaproo/rss.phtml">
+                <action method="addFeed" ifconfig="zaproo/article/rss" translate="label" module="zaproo">
+                    <label>Articles</label>
+                    <url helper="zaproo/article/getRssUrl" />
+                </action>
+            </block>
+        </reference>
+    </rss_index_index>
 </layout>

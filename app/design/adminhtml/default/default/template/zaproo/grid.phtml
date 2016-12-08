@@ -1,0 +1,29 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: dev30
+ * Date: 12/8/16
+ * Time: 5:08 PM
+ *
+ * @var $this AlexDev_Zaproo_Block_Adminhtml_Article
+ */
+?>
+
+<div class="content-header">
+    <table cellspacing="0">
+        <tr>
+            <td style="width:50%;"><h3
+                    class="icon-head <?php echo $this->getHeadClass(); ?>"><?php echo $this->getHeaderText(); ?></h3>
+            </td>
+            <td class="a-right">
+                <?php echo $this->getButtonsHtml() ?>
+            </td>
+        </tr>
+    </table>
+</div>
+<?php if (!Mage::app()->isSingleStoreMode()): ?>
+    <?php echo $this->getChildHtml('store_switcher'); ?>
+<?php endif; ?>
+<div>
+    <?php echo $this->getGridHtml() ?>
+</div>

@@ -2,7 +2,7 @@
 <config>
     <modules>
         <AlexDev_Zaproo>
-            <version>0.1.5</version>
+            <version>0.1.6</version>
         </AlexDev_Zaproo>
     </modules>
     <global>
@@ -21,7 +21,7 @@
                         <table>alexdev_zaproo_article</table>
                     </article>
                     <eav_attribute>
-                        <table>zaproo_articles_eav_attribute</table>
+                        <table>alexdev_zaproo_articles_eav_attribute</table>
                     </eav_attribute>
                 </entities>
             </alexdev_zaproo_resource>
@@ -60,7 +60,7 @@
             <zaproo_setup>
                 <setup>
                     <module>AlexDev_Zaproo</module>
-                    <class>Mage_Core_Model_Resource_Setup</class>
+                    <class>AlexDev_Zaproo_Model_Resource_Setup</class>
                 </setup>
             </zaproo_setup>
         </resources>
@@ -89,7 +89,7 @@
             <adminhtml>
                 <args>
                     <modules>
-                        <zaproo after="Mage_Adminhtml">AlexDev_Zaproo_Adminhtml</zaproo>
+                        <zaproo before="Mage_Adminhtml">AlexDev_Zaproo_Adminhtml</zaproo>
                     </modules>
                 </args>
             </adminhtml>
@@ -103,6 +103,21 @@
                 </zaproo>
             </updates>
         </layout>
+        <translate>
+            <modules>
+                <zaproo>
+                    <files>
+                        <default>AlexDev_Zaproo.csv</default>
+                    </files>
+                </zaproo>
+            </modules>
+        </translate>
+        <global_search>
+            <article>
+                <class>zaproo/adminhtml_search_article</class>
+                <acl>zaproo</acl>
+            </article>
+        </global_search>
         <events>
             <controller_action_predispatch>
                 <observers>
@@ -112,7 +127,26 @@
                         <method>controllerActionPredispatch</method>
                     </zaproo>
                 </observers>
+                <page_block_html_topmenu_gethtml_before><!-- add link to top menu -->
+                    <observers>
+                        <zaproo>
+                            <class>zaproo/observer</class>
+                            <method>addItemsToTopmenuItems</method>
+                        </zaproo>
+                    </observers>
+                </page_block_html_topmenu_gethtml_before>
             </controller_action_predispatch>
         </events>
     </adminhtml>
+    <default>
+        <zaproo>
+            <article>
+                <breadcrumbs>1</breadcrumbs>
+                <url_prefix>article</url_prefix>
+                <url_suffix>html</url_suffix>
+                <rss>1</rss>
+                <meta_title>Articles</meta_title>
+            </article>
+        </zaproo>
+    </default>
 </config>

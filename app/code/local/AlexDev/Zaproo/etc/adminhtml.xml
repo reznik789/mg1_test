@@ -16,8 +16,27 @@
                 </zaproo>
             </children>
         </catalog>
+        <cms><!-- I added the admin menu under CMS. Feel free to move it. -->
+            <children>
+                <zaproo_news translate="title" module="zaproo">
+                    <title>News</title>
+                    <sort_order>17</sort_order>
+                    <children>
+                        <article translate="title" module="zaproo">
+                            <title>Article</title>
+                            <action>adminhtml/news_article</action>
+                            <sort_order>0</sort_order>
+                        </article>
+                        <article_attributes translate="title" module="zaproo">
+                            <title>Manage Article Attributes</title>
+                            <action>adminhtml/zaproo_article_attribute</action>
+                            <sort_order>7</sort_order>
+                        </article_attributes>
+                    </children>
+                </zaproo_news>
+            </children>
+        </cms>
     </menu>
-
     <acl>
         <resources>
             <admin>
@@ -36,12 +55,23 @@
                             </zaproo>
                         </children>
                     </catalog>
-                </children>
-            </admin>
-        </resources>
-        <resources>
-            <admin>
-                <children>
+                    <cms>
+                        <children>
+                            <zaproo_news translate="title" module="zaproo">
+                                <title>News</title>
+                                <children>
+                                    <article translate="title" module="zaproo">
+                                        <title>Article</title>
+                                        <sort_order>9</sort_order>
+                                    </article>
+                                    <article_attributes translate="title" module="zaproo">
+                                        <title>Manage Article attributes</title>
+                                        <sort_order>11</sort_order>
+                                    </article_attributes>
+                                </children>
+                            </zaproo_news>
+                        </children>
+                    </cms>
                     <system>
                         <children>
                             <config>
@@ -49,6 +79,9 @@
                                     <zaproo>
                                         <title>Store Zaproo Test Section</title>
                                     </zaproo>
+                                    <zaproo_news translate="title" module="zaproo">
+                                        <title>News</title>
+                                    </zaproo_news>
                                 </children>
                             </config>
                         </children>

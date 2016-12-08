@@ -1,0 +1,24 @@
+<?php $_article = $this->getCurrentArticle(); ?>
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+<div class="page-title article-title">
+    <h1><?php echo $_article->getTitle(); ?></h1>
+</div>
+<div class="article-view">
+    <div class="article-title">
+        <?php echo Mage::helper('zaproo')->__('Title'); ?>:<?php echo $_article->getTitle(); ?>
+
+    </div>
+    <div class="article-short_description">
+        <?php echo Mage::helper('zaproo')->__('Short description'); ?>
+        :<?php echo $_article->getShortDescription(); ?>
+
+    </div>
+    <div class="article-description">
+        <?php echo Mage::helper('zaproo')->__('Description'); ?>:<?php echo $_article->getDescription(); ?>
+
+    </div>
+    <div class="article-publish_date">
+        <?php echo Mage::helper('zaproo')->__("Publish Date"); ?>
+        : <?php echo Mage::helper('core')->formatDate($_article->getPublishDate(), 'full'); ?>
+    </div>
+</div>

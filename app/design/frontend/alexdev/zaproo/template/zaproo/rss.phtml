@@ -1,0 +1,20 @@
+<?php $_feeds = $this->getFeeds();?>
+<?php if ($_feeds): ?>
+    <table class="data-table rss-table" id="rss-table-news" style="margin-top:20px">
+        <col />
+        <col width="1" />
+        <thead>
+        <tr>
+            <th colspan="2"><?php echo Mage::helper('zaproo')->__('News Feeds') ?></th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($_feeds as $_feed): ?>
+            <tr>
+                <td><?php echo $_feed->getLabel() ?></td>
+                <td><a href="<?php echo $_feed->getUrl() ?>" class="link-rss"><?php echo Mage::helper('zaproo')->__('Get Feed'); ?></a></td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+<?php endif; ?>

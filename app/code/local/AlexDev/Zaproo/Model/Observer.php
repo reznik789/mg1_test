@@ -25,4 +25,21 @@ class AlexDev_Zaproo_Model_Observer
     public function initControllerRouters(Varien_Event_Observer $observer) {
         
     }
+
+    public function addItemsToTopmenuItems(Varien_Event_Observer $observer) {
+        $menu = $observer->getMenu();
+        $tree = $menu->getTree();
+        $action = Mage::app()->getFrontController()->getAction()->getFullActionName();
+
+        $articleNodeId = 'article';
+        $data = array(
+            'name' => Mage::helper('zaproo')->__('Articles'),
+            'id' => $articleNodeId,
+            'url' => Mage::helper('zaproo/article')->getArticlesUrl(),
+            'is_active' => ($action == 'zaproo_article_index' || $action == 'zaproo_article_view')
+        );
+        $articleNode = new Varien_Data_Tree_Node($data, 'id', $tree, $menu);
+        $menu->addChild($articleNode);
+        return $this;
+    }
 }
