@@ -6,7 +6,7 @@ class AlexDev_Zaproo_Model_Article
     const ENTITY    = 'zaproo_article';
     const CACHE_TAG = 'zaproo_article';
 
-    protected $_eventPrefix = 'alexDev_zaproo';
+    protected $_eventPrefix = 'zaproo';
 
     protected $_eventObject = 'article';
 

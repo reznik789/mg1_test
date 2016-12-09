@@ -49,8 +49,7 @@
             <controller_front_init_routers><!-- event for custom router - url rewrites -->
                 <observers>
                     <zaproo>
-                        <type>model</type>
-                        <class>zaproo/observer</class>
+                        <class>AlexDev_Zaproo_Controller_Router</class>
                         <method>initControllerRouters</method>
                     </zaproo>
                 </observers>

@@ -51,7 +51,7 @@ class AlexDev_Zaproo_Controller_Router
                 if ($settings->getCheckPath() && !$model->load($id)->getStatusPath()) {
                     continue;
                 }
-                $request->setModuleName('news')
+                $request->setModuleName('zaproo')
                     ->setControllerName($settings->getController())
                     ->setActionName($settings->getAction())
                     ->setParam($settings->getParam(), $id);
